@@ -21,7 +21,7 @@ export default function App() {
     image: '/logo.svg',
     margin: 10,
     qrOptions: {
-      typeNumber: 4 as TypeNumber,
+      typeNumber: 0 as TypeNumber,
       mode: 'Byte' as Mode,
       errorCorrectionLevel: 'H' as ErrorCorrectionLevel
     },
