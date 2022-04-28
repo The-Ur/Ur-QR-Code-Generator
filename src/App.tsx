@@ -18,12 +18,12 @@ export default function App() {
     height: 300,
     type: 'svg' as DrawType,
     data: 'http://qr-code-styling.com',
-    image: '/favicon.ico',
+    image: '/logo.svg',
     margin: 10,
     qrOptions: {
-      typeNumber: 0 as TypeNumber,
+      typeNumber: 4 as TypeNumber,
       mode: 'Byte' as Mode,
-      errorCorrectionLevel: 'Q' as ErrorCorrectionLevel
+      errorCorrectionLevel: 'H' as ErrorCorrectionLevel
     },
     imageOptions: {
       hideBackgroundDots: true,
@@ -49,8 +49,8 @@ export default function App() {
       // },
     },
     cornersSquareOptions: {
-      color: '#222222',
-      type: 'extra-rounded' as CornerSquareType,
+      color: '#ffa620',
+      type: 'dot' as CornerSquareType,
       // gradient: {
       //   type: 'linear', // 'radial'
       //   rotation: 180,
@@ -58,7 +58,7 @@ export default function App() {
       // },
     },
     cornersDotOptions: {
-      color: '#222222',
+      color: '#009efa',
       type: 'dot' as CornerDotType,
       // gradient: {
       //   type: 'linear', // 'radial'
