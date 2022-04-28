@@ -14,8 +14,8 @@ import QRCodeStyling, {
 
 export default function App() {
   const [options, setOptions] = useState<Options>({
-    width: 300,
-    height: 300,
+    width: 400,
+    height: 400,
     type: 'svg' as DrawType,
     data: 'http://qr-code-styling.com',
     image: '/logo.svg',
@@ -41,7 +41,7 @@ export default function App() {
       type: 'rounded' as DotType
     },
     backgroundOptions: {
-      color: '#5FD4F3',
+      color: '#FFFFFF',
       // gradient: {
       //   type: 'linear', // 'radial'
       //   rotation: 0,
