@@ -13,11 +13,16 @@ import QRCodeStyling, {
 } from "qr-code-styling";
 
 export default function App() {
+  let query = new URLSearchParams(window.location.search);
+  let data = "https://urth.earth";
+  if (query.has("q") && query.get("q")) {
+    data = query.get("q") as string;
+  }
   const [options, setOptions] = useState<Options>({
     width: 200,
     height: 200,
     type: 'svg' as DrawType,
-    data: 'http://qr-code-styling.com',
+    data: data,
     image: '/logo.svg',
     margin: 10,
     qrOptions: {
