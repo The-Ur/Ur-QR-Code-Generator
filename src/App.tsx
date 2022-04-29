@@ -14,8 +14,8 @@ import QRCodeStyling, {
 
 export default function App() {
   const [options, setOptions] = useState<Options>({
-    width: 400,
-    height: 400,
+    width: 200,
+    height: 200,
     type: 'svg' as DrawType,
     data: 'http://qr-code-styling.com',
     image: '/logo.svg',
@@ -89,6 +89,14 @@ export default function App() {
     }));
   };
 
+  const onWidthChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setOptions(options => ({
+      ...options,
+      width: parseInt(event.target.value),
+      height: parseInt(event.target.value)
+    }));
+  };
+
   const onExtensionChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setFileExt(event.target.value as Extension);
   };
@@ -102,8 +110,9 @@ export default function App() {
 
   return (
     <div className="App">
-      <h2>QR code styling for React</h2>
+      <h2>QR code styling for the Ur</h2>
       <div ref={ref} />
+      <p>Styling below</p>
       <div style={styles.inputWrapper}>
         <input value={options.data} onChange={onDataChange} style={styles.inputBox} />
         <select onChange={onExtensionChange} value={fileExt}>
@@ -113,6 +122,10 @@ export default function App() {
           <option value="webp">WEBP</option>
         </select>
         <button onClick={onDownloadClick}>Download</button>
+      </div>
+      <div style={styles.inputWrapper}>
+        <p style={styles.inputLabel}>Adjust Dimensions</p>
+        <input value={options.width} onChange={onWidthChange} type="number" style={styles.inputBox} />
       </div>
     </div>
   );
@@ -129,5 +142,9 @@ const styles = {
   inputBox: {
     flexGrow: 1,
     marginRight: 20
+  },
+  inputLabel: {
+    marginRight: "5px",
+    marginY: "0"
   }
 };
